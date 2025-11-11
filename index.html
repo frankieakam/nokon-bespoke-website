@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="Artisan Tailoring - Bespoke Clothing Crafted Just for You">
+    <title>Artisan Tailoring | Bespoke Clothing</title>
+    <link rel="icon" href="./images/logo.jpg" type="image/jpg">
+    <link rel="stylesheet" href="./styles/input.css">
+    <link rel="stylesheet" href="./styles/custom.css">
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="./images/logo.jpg" alt="Artisan Tailor Logo" class="h-10 w-auto rounded-full border border-black mr-3">
+                <span class="text-xl font-serif font-bold">Artisan Tailor</span> 
+            </a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-10">
+                <a href="#gallery" class="hover:text-gray-600 transition-colors">Gallery</a>
+                <a href="#process" class="hover:text-gray-600 transition-colors">Process</a>
+                <a href="#about" class="hover:text-gray-600 transition-colors">About</a>
+                <a href="#contact" class="hover:text-gray-600 transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Navigation Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Mobile Navigation Menu -->
+<div id="mobileMenu" class="absolute top-full left-0 right-0 bg-white shadow-xl md:hidden hidden flex-row text-center space-x-4 p-4 border-t">
+    <a href="#gallery" class="hover:text-gray-800 transition-all duration-300 py-4 px-2 text-center w-full text-lg font-medium rounded-lg">Gallery</a>
+    <a href="#process" class="hover:text-gray-800 transition-all duration-300 py-4 px-2 text-center w-full text-lg font-medium rounded-lg">Process</a>
+    <a href="#about" class="hover:text-gray-800 transition-all duration-300 py-4 px-2 text-center w-full text-lg font-medium rounded-lg">About</a>
+    <a href="#contact" class="hover:text-gray-800 transition-all duration-300 py-4 px-2 text-center w-full text-lg font-medium rounded-lg">Contact</a>
+</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+<section class="relative pt-20 min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="./images/hero-bg.png" alt="Luxury tailoring background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="hero-content relative z-10 container mx-auto px-6 text-center text-white">
+        <div class="max-w-3xl mx-auto">
+            <!-- Animated Badge -->
+            <div class="inline-flex items-center space-x-2 bg-white bg-opacity-20 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white border-opacity-30">
+                <i class="fas fa-star text-yellow-400"></i>
+                <span class="text-sm font-semibold">Premium Bespoke Tailoring</span>
+            </div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight">
+                Craftsmanship<br>
+                <span class="text-yellow-400">Worn Daily</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                Bespoke clothing tailored uniquely for you, with precision and passion that tells your story.
+            </p>
+            
+            <!-- CTA Button -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button id="consultationBtn" class="bg-yellow-500 text-black px-8 py-4 hover:bg-yellow-400 transition-all duration-300 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Begin Your Consultation
+                </button>
+                <a href="#gallery" class="border-2 border-white text-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 rounded-lg font-semibold text-lg">
+                    View Our Work
+                </a>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-[-9] left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#gallery" class="text-white text-2xl">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="modal-overlay">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2 class="text-2xl font-serif mb-6">Begin Your Consultation</h2>
+            <form id="consultationForm" class="space-y-4">
+                <input type="text" name="name" placeholder="Full Name" class="w-full p-3 border border-gray-300 rounded" required>
+                <input type="tel" name="phone" placeholder="Phone Number" class="w-full p-3 border border-gray-300 rounded" required>
+                <input type="text" name="location" placeholder="Location" class="w-full p-3 border border-gray-300 rounded" required>
+                <textarea name="interests" placeholder="What are you interested in? (e.g., custom suit, wedding attire etc.)" class="w-full p-3 border border-gray-300 rounded h-24" required></textarea>
+                
+                <button type="submit" class="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700 transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>Continue to WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white reveal-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-serif text-center mb-12 reveal-stagger">Our Work</h2>
+            <div class="masonry-grid reveal-stagger">
+                <!-- images -->
+                <div class="masonry-item">
+                    <img src="./images/gallery-1.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-2.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-3.png" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-4.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-3.png" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-4.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-1.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-2.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-1.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+                <div class="masonry-item">
+                    <img src="./images/gallery-2.jpg" alt="Bespoke suit" lazy="loading" class="rounded-lg">
+                    <div class="masonry-overlay rounded-lg">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox-overlay">
+        <button class="lightbox-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="" class="rounded-lg">
+        </div>
+    </div>
+
+   <!-- Process Section -->
+<section id="process" class="py-20 bg-gray-50 reveal-section">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-serif text-center mb-16 reveal-stagger">Our Process</h2>
+        
+        <!-- Desktop/Layout: Horizontal Timeline -->
+        <div class="hidden lg:block">
+            <div class="relative">
+                <!-- Horizontal Timeline Line -->
+                <div class="absolute left-11 right-11 top-1/2 transform -translate-y-1/2 h-1 bg-gray-300 z-0"></div>
+                
+                <div class="relative z-10 flex justify-between items-start">
+                    <!-- Consultation Step -->
+                    <div class="process-step-horizontal text-center flex-1 px-4">
+                        <div class="step-number-icon bg-black text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 relative">
+                            <i class="fas fa-1 text-2xl"></i>
+                        </div>
+                        <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-comments text-xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-serif mb-2">Consultation</h3>
+                        <p class="text-gray-600 text-sm">Initial discussion about your needs and style preferences</p>
+                    </div>
+                    
+                    <!-- Measurement Step -->
+                    <div class="process-step-horizontal text-center flex-1 px-4">
+                        <div class="step-number-icon bg-black text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 relative">
+                            <i class="fas fa-2 text-2xl"></i>
+                        </div>
+                        <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tape text-xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-serif mb-2">Measurement</h3>
+                        <p class="text-gray-600 text-sm">Precise body measurements for perfect fit</p>
+                    </div>
+                    
+                    <!-- Fabric Selection Step -->
+                    <div class="process-step-horizontal text-center flex-1 px-4">
+                        <div class="step-number-icon bg-black text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 relative">
+                            <i class="fas fa-3 text-2xl"></i>
+                        </div>
+                        <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tshirt text-xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-serif mb-2">Fabric Selection</h3>
+                        <p class="text-gray-600 text-sm">Choose from our premium collection of fabrics</p>
+                    </div>
+                    
+                    <!-- Fitting Step -->
+                    <div class="process-step-horizontal text-center flex-1 px-4">
+                        <div class="step-number-icon bg-black text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 relative">
+                            <i class="fas fa-4 text-2xl"></i>
+                        </div>
+                        <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-check text-xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-serif mb-2">Fitting</h3>
+                        <p class="text-gray-600 text-sm">First fitting session for perfect fit and adjustments</p>
+                    </div>
+                    
+                    <!-- Delivery Step -->
+                    <div class="process-step-horizontal text-center flex-1 px-4">
+                        <div class="step-number-icon bg-black text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 relative">
+                            <i class="fas fa-5 text-2xl"></i>
+                        </div>
+                        <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shipping-fast text-xl text-black"></i>
+                        </div>
+                        <h3 class="text-xl font-serif mb-2">Delivery</h3>
+                        <p class="text-gray-600 text-sm">Final garment delivery with quality assurance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Layout: Vertical Timeline -->
+        <div class="lg:hidden">
+            <div class="max-w-2xl mx-auto relative">
+                <!-- Vertical Timeline Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2 z-0"></div>
+                
+                <div class="space-y-12 relative z-10">
+                    <!-- Consultation Step -->
+                    <div class="process-step-vertical flex items-center">
+                        <div class="flex-shrink-0 w-1/2 pr-8 text-right">
+                            <div class="step-number-icon bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 relative">
+                                <i class="fas fa-1 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-serif mb-2">Consultation</h3>
+                            <p class="text-gray-600 text-sm">Initial discussion about your needs and style preferences</p>
+                        </div>
+                        <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center mx-4">
+                            <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-comments text-lg text-black"></i>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-1/2"></div>
+                    </div>
+                    
+                    <!-- Measurement Step -->
+                    <div class="process-step-vertical flex items-center">
+                        <div class="flex-shrink-0 w-1/2"></div>
+                        <div class="flex-shrink-0 w-1/2 pl-8 text-left">
+                            <div class="step-number-icon bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 relative">
+                                <i class="fas fa-2 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-serif mb-2">Measurement</h3>
+                            <p class="text-gray-600 text-sm">Precise body measurements for perfect fit</p>
+                        </div>
+                        <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center mx-4">
+                            <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-tape text-lg text-black"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Fabric Selection Step -->
+                    <div class="process-step-vertical flex items-center">
+                        <div class="flex-shrink-0 w-1/2 pr-8 text-right">
+                            <div class="step-number-icon bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 relative">
+                                <i class="fas fa-3 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-serif mb-2">Fabric Selection</h3>
+                            <p class="text-gray-600 text-sm">Choose from our premium collection of fabrics</p>
+                        </div>
+                        <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center mx-4">
+                            <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-tshirt text-lg text-black"></i>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-1/2"></div>
+                    </div>
+                    
+                    <!-- Fitting Step -->
+                    <div class="process-step-vertical flex items-center">
+                        <div class="flex-shrink-0 w-1/2"></div>
+                        <div class="flex-shrink-0 w-1/2 pl-8 text-left">
+                            <div class="step-number-icon bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 relative">
+                                <i class="fas fa-4 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-serif mb-2">Fitting</h3>
+                            <p class="text-gray-600 text-sm">First fitting session for perfect fit and adjustments</p>
+                        </div>
+                        <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center mx-4">
+                            <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-user-check text-lg text-black"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Delivery Step -->
+                    <div class="process-step-vertical flex items-center">
+                        <div class="flex-shrink-0 w-1/2 pr-8 text-right">
+                            <div class="step-number-icon bg-black text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 relative">
+                                <i class="fas fa-5 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-serif mb-2">Delivery</h3>
+                            <p class="text-gray-600 text-sm">Final garment delivery with quality assurance</p>
+                        </div>
+                        <div class="flex-shrink-0 w-20 h-20 flex items-center justify-center mx-4">
+                            <div class="step-icon bg-white border-2 border-black rounded-full w-16 h-16 flex items-center justify-center">
+                                <i class="fas fa-shipping-fast text-lg text-black"></i>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white reveal-section">
+        <div class="container mx-auto px-6">
+            <div class="mb-10 reveal-stagger">
+                <h2 class="text-5xl font-serif mb-4 text-gray-900">Crafting Stories in Fabric</h2>
+                <div class="w-20 h-1 bg-yellow-600 mb-6"></div>
+            </div>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center reveal-stagger">
+                <!-- Image Column -->
+                <div class="relative">
+                    <div class="relative z-10">
+                        <img src="./images/artisan.jpg" alt="Artisan at work" class="rounded-2xl shadow-2xl w-full" lazy="loading">
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -bottom-16 -left-6 w-24 h-24 bg-yellow-100 rounded-full z-0"></div>
+                    <div class="absolute -top-16 -right-6 w-32 h-32 bg-gray-100 rounded-full z-0"></div>
+                
+                    <!-- Stats overlay -->
+                    <div class="absolute -bottom-16 -right-6 bg-black text-white p-6 rounded-bl-2xl shadow-xl">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold font-serif">15+</div>
+                            <div class="text-sm opacity-90">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="space-y-8">
+                    <!-- Key Points -->
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Premium Quality</div>
+                                <div class="text-sm text-gray-600">Finest materials</div>
+                            </div>
+                        </div>
+                    
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                                <i class="fas fa-hand-sparkles text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Handcrafted</div>
+                                <div class="text-sm text-gray-600">Artisanal touch</div>
+                            </div>
+                        </div>
+                    
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                                <i class="fas fa-tape text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Perfect Fit</div>
+                                <div class="text-sm text-gray-600">Precision tailored</div>
+                            </div>
+                        </div>
+                    
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                                <i class="fas fa-clock text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Timeless</div>
+                                <div class="text-sm text-gray-600">Enduring style</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="pt-6">
+                        <a href="#contact" class="inline-flex items-center space-x-3 bg-black text-white px-8 py-4 rounded hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-arrow-down text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 reveal-section">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 reveal-stagger">
+                <div>
+                    <h2 class="text-4xl font-serif mb-6">Get In Touch</h2>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-mobile-screen-button text-gray-600"></i>
+                            <span>+1234567890</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-green-600"></i>
+                            <span>+1234567890</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-gray-600"></i>
+                            <span>brand@email.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-gray-600"></i>
+                            <span>Studio Address, City</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contactForm" class="space-y-4">
+                        <input type="text" name="name" placeholder="Name" class="w-full p-3 border border-gray-300 rounded" required>
+                        <input type="tel" name="phone" placeholder="Phone" class="w-full p-3 border border-gray-300 rounded" required>
+                        <textarea name="message" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded h-32" required></textarea>
+                        
+                        <button type="submit" class="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700 transition-colors">
+                            <i class="fab fa-whatsapp mr-2"></i>Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+<footer class="bg-black text-white py-12 reveal-section">
+    <div class="container mx-auto px-6">
+        <div class="max-w-6xl mx-auto reveal-stagger">
+            <!-- Main Footer Content -->
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand Column -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <img src="./images/logo.jpg" alt="Artisan Tailor Logo" class="h-8 w-auto rounded-full">
+                        <span class="text-xl font-serif font-bold">Artisan Tailor</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Crafting bespoke clothing with precision and passion. Your perfect fit is our commitment.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="#gallery" class="block text-gray-400 hover:text-white transition-colors">Gallery</a>
+                        <a href="#process" class="block text-gray-400 hover:text-white transition-colors">Our Process</a>
+                        <a href="#about" class="block text-gray-400 hover:text-white transition-colors">About Us</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 gap-4">
+
+                    <!-- Legal Links -->
+                    <div class="flex flex-wrap justify-center space-x-6 text-sm order-2 md:order-1">
+                        <button id="termsBtn" class="text-gray-400 hover:text-white transition-colors">
+                            Terms & Conditions
+                        </button>
+                        <button id="privacyBtn" class="text-gray-400 hover:text-white transition-colors">
+                            Privacy Policy
+                        </button>  
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="text-gray-400 text-sm text-center order-1 md:order-2">
+                        &copy; <span id="currentYear"></span> Artisan Tailor. All rights reserved.
+                    </div>
+                    
+                    <!-- Built By -->
+                    <div class="flex flex-wrap justify-center space-x-6 text-sm order-3">
+                        <a href="https://www.x.com/superlabsng" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                            Built by Super Labs Nigeria
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Terms & Conditions Modal -->
+<div id="termsModal" class="modal-overlay">
+    <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto relative">
+        <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="border-b border-gray-200 pb-4 mb-6">
+            <h2 class="text-3xl font-serif mb-2 text-black">Terms & Conditions</h2>
+            <p class="text-gray-500 text-sm">Last Updated: <span id="termsDate"></span></p>
+        </div>
+        
+        <div class="space-y-6 text-gray-700">
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">1. Consultation & Booking</h3>
+                <p>All consultations are by appointment only. A 50% deposit is required to secure your booking and begin the bespoke process.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">2. Measurements & Fittings</h3>
+                <p>We require precise measurements for optimal fit. Additional fittings may be scheduled if necessary to achieve perfection.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">3. Fabric & Materials</h3>
+                <p>All fabrics are sourced from premium suppliers. Once selected, fabric choices cannot be changed after cutting.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">4. Delivery Timeline</h3>
+                <p>Standard delivery time is 4-6 weeks from final measurements. Rush orders may incur additional charges.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">5. Returns & Alterations</h3>
+                <p>Due to the bespoke nature of our garments, returns are not accepted. Minor alterations within 30 days of delivery are complimentary.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" class="modal-overlay">
+    <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto relative">
+        <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="border-b border-gray-200 pb-4 mb-6">
+            <h2 class="text-3xl font-serif mb-2 text-black">Privacy Policy</h2>
+            <p class="text-gray-500 text-sm">Last Updated: <span id="privacyDate"></span></p>
+        </div>
+        
+        <div class="space-y-6 text-gray-700">
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">1. Information We Collect</h3>
+                <p>We collect personal information including your name, contact details, measurements, and style preferences to provide our bespoke tailoring services.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">2. How We Use Your Information</h3>
+                <p>Your information is used solely for creating your bespoke garments, scheduling appointments, and providing customer service. We never share your data with third parties.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">3. Data Security</h3>
+                <p>We implement appropriate security measures to protect your personal information against unauthorized access or disclosure.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">4. Your Rights</h3>
+                <p>You have the right to access, correct, or delete your personal information. Contact us to exercise these rights.</p>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-3 text-black">5. Contact Information</h3>
+                <p>For privacy-related inquiries, please contact us through the provided contact methods.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script type="module" src="/scripts/main.ts"></script>
+</body>
+</html>
