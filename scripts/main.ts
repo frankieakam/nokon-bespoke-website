@@ -1,4 +1,4 @@
-// Modal functionality
+// modal functionality
 const consultationBtn = document.getElementById('consultationBtn') as HTMLButtonElement;
 const consultationModal = document.getElementById('consultationModal') as HTMLDivElement;
 const closeModalBtn = consultationModal.querySelector('button') as HTMLButtonElement;
@@ -11,7 +11,7 @@ closeModalBtn.addEventListener('click', () => {
     consultationModal.classList.remove('active');
 });
 
-// Consultation Form WhatsApp
+// consultation form whatsApp
 const consultationForm = document.getElementById('consultationForm') as HTMLFormElement;
 consultationForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -22,19 +22,19 @@ consultationForm.addEventListener('submit', (e) => {
     const location = formData.get('location') as string;
     const interests = formData.get('interests') as string;
 
-    // Better formatting with proper encoding
+    // better formatting with proper encoding
     const message = `New Consultation Request:%0A%0A` + `*Name:* ${encodeURIComponent(name)}%0A` + `*Phone:* ${encodeURIComponent(phone)}%0A` + `*Location:* ${encodeURIComponent(location)}%0A` + `*Interests:* ${encodeURIComponent(interests)}`;
     const whatsappUrl = `https://wa.me/2348108738972?text=${message}`;
     
-    // Close modal and open WhatsApp
+    // close modal and open whatsApp
     consultationModal.classList.remove('active');
     window.open(whatsappUrl, '_blank');
 
-    // Optional: Reset the form
+    // reset the form
     consultationForm.reset();
 });
 
-// Lightbox functionality
+// lightbox functionality
 const lightbox = document.getElementById('lightbox') as HTMLDivElement;
 const lightboxImage = document.getElementById('lightboxImage') as HTMLImageElement;
 const lightboxClose = lightbox.querySelector('.lightbox-close') as HTMLButtonElement;
@@ -59,7 +59,7 @@ const galleryImages = [
 
 let currentImageIndex = 0;
 
-// Add click events to masonry items
+// add click events to masonry items
 document.querySelectorAll('.masonry-item').forEach((item, index) => {
     item.addEventListener('click', () => {
         currentImageIndex = index;
@@ -86,7 +86,7 @@ lightboxNext.addEventListener('click', () => {
     openLightbox(currentImageIndex);
 });
 
-// Contact Form WhatsApp
+// contact form whatsApp
 const contactForm = document.getElementById('contactForm') as HTMLFormElement;
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -96,30 +96,30 @@ contactForm.addEventListener('submit', (e) => {
     const phone = formData.get('phone') as string;
     const message = formData.get('message') as string;
 
-    // Better formatting without email
+    // better formatting without email
     const whatsappMessage = `New Contact Form Submission:%0A%0A` + `*Name:* ${encodeURIComponent(name)}%0A` + `*Phone:* ${encodeURIComponent(phone)}%0A` + `*Message:* ${encodeURIComponent(message)}`;
     const whatsappUrl = `https://wa.me/2348108738972?text=${whatsappMessage}`;
     
     window.open(whatsappUrl, '_blank');
 
-    // Optional: Reset the form
+    // reset the form
     contactForm.reset();
 });
 
-// Close lightbox when clicking outside image
+// close lightbox when clicking outside image
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
         closeLightbox();
     }
 });
 
-// Mobile Menu Functionality
+// mobile menu functionality
 const mobileMenuBtn = document.getElementById('mobileMenuBtn') as HTMLButtonElement;
 const mobileMenu = document.getElementById('mobileMenu') as HTMLDivElement;
 
 mobileMenuBtn?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
-    // Change icon based on menu state
+    // change icon based on menu state
     const icon = mobileMenuBtn.querySelector('i');
     if (icon) {
         if (mobileMenu?.classList.contains('hidden')) {
@@ -130,7 +130,7 @@ mobileMenuBtn?.addEventListener('click', () => {
     }
 });
 
-// Close mobile menu when clicking on a link
+// close mobile menu when clicking on a link
 document.querySelectorAll('#mobileMenu a').forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu?.classList.add('hidden');
@@ -141,7 +141,7 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
     });
 });
 
-// Close mobile menu when clicking outside
+// close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
     if (!target.closest('nav') && !mobileMenu?.classList.contains('hidden')) {
@@ -153,43 +153,25 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Dynamic Date Functionality
+// dynamic date functionality
 function updateDynamicDates() {
-    // Update copyright year
+    // update copyright year
     const currentYearElement = document.getElementById('currentYear');
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear().toString();
     }
-
-    // Update terms and privacy dates
-    const termsDateElement = document.getElementById('termsDate');
-    const privacyDateElement = document.getElementById('privacyDate');
-    
-    const currentDate = new Date();
-    const formattedDate = currentDate.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
-
-    if (termsDateElement) {
-        termsDateElement.textContent = formattedDate;
-    }
-    if (privacyDateElement) {
-        privacyDateElement.textContent = formattedDate;
-    }
 }
 
-// Initialize dates when page loads
+// initialize dates when page loads
 document.addEventListener('DOMContentLoaded', updateDynamicDates);
 
-// Footer Modals Functionality
+// footer modals functionality
 const termsBtn = document.getElementById('termsBtn') as HTMLButtonElement;
 const privacyBtn = document.getElementById('privacyBtn') as HTMLButtonElement;
 const termsModal = document.getElementById('termsModal') as HTMLDivElement;
 const privacyModal = document.getElementById('privacyModal') as HTMLDivElement;
 
-// Terms Modal
+// terms modal
 termsBtn?.addEventListener('click', () => {
     termsModal.classList.add('active');
 });
@@ -198,7 +180,7 @@ termsModal?.querySelector('button')?.addEventListener('click', () => {
     termsModal.classList.remove('active');
 });
 
-// Privacy Modal
+// privacy modal
 privacyBtn?.addEventListener('click', () => {
     privacyModal.classList.add('active');
 });
@@ -207,7 +189,7 @@ privacyModal?.querySelector('button')?.addEventListener('click', () => {
     privacyModal.classList.remove('active');
 });
 
-// Close modals when clicking outside
+// close modals when clicking outside
 termsModal?.addEventListener('click', (e) => {
     if (e.target === termsModal) {
         termsModal.classList.remove('active');
@@ -220,7 +202,7 @@ privacyModal?.addEventListener('click', (e) => {
     }
 });
 
-// Close modals with Escape key
+// close modals with escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         termsModal?.classList.remove('active');
@@ -228,11 +210,11 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Smooth Continuous Scroll Reveal
+// smooth continuous scroll reveal
 function initSmoothScrollReveal() {
     const sections = document.querySelectorAll('.reveal-section');
     
-    // Function to check section visibility
+    // function to check section visibility
     const checkSections = () => {
         const windowHeight = window.innerHeight;
         const revealPoint = 100; // pixels from bottom of viewport
@@ -241,11 +223,11 @@ function initSmoothScrollReveal() {
             const sectionTop = section.getBoundingClientRect().top;
             const sectionBottom = section.getBoundingClientRect().bottom;
             
-            // If section is in viewport
+            // if section is in viewport
             if (sectionTop < windowHeight - revealPoint && sectionBottom > revealPoint) {
                 section.classList.add('revealed');
                 
-                // Also reveal staggered children
+                // also reveal staggered children
                 const staggeredChildren = section.querySelectorAll('.reveal-stagger');
                 staggeredChildren.forEach(child => {
                     child.classList.add('revealed');
@@ -253,7 +235,7 @@ function initSmoothScrollReveal() {
             } else {
                 section.classList.remove('revealed');
                 
-                // Also hide staggered children
+                // also hide staggered children
                 const staggeredChildren = section.querySelectorAll('.reveal-stagger');
                 staggeredChildren.forEach(child => {
                     child.classList.remove('revealed');
@@ -262,7 +244,7 @@ function initSmoothScrollReveal() {
         });
     };
     
-    // Throttle scroll events for performance
+    // throttle scroll events for performance
     let ticking = false;
     const throttleScroll = () => {
         if (!ticking) {
@@ -274,22 +256,22 @@ function initSmoothScrollReveal() {
         }
     };
     
-    // Event listeners
+    // event listeners
     window.addEventListener('scroll', throttleScroll);
     window.addEventListener('resize', throttleScroll);
     window.addEventListener('load', throttleScroll);
     
-    // Initial check
+    // initial check
     checkSections();
 }
 
-// Initialize when DOM is loaded
+// initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScrollReveal();
     updateDynamicDates();
 });
 
-// Re-check on hash changes (for anchor links)
+// re-check on hash changes (for anchor links)
 window.addEventListener('hashchange', () => {
     setTimeout(() => {
         initSmoothScrollReveal();

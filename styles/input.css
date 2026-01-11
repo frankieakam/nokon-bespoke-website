@@ -1,9 +1,9 @@
-/* Input CSS File for Tailwind and Font Awesome  */
+/* input css file for tailwind and font awesome  */
 
-/* Font Awesome Import */
+/* font awesome import */
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
-/* Tailwind Directives */
+/* tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
