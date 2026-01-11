@@ -98,10 +98,10 @@
             
             <h2 class="text-2xl font-serif mb-6">Begin Your Bespoke Consulting</h2>
             <form id="consultationForm" class="space-y-4">
-                <input type="text" name="name" placeholder="Full Name" autocomplete="name" class="w-full p-3 border border-gray-300 rounded" required>
-                <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" class="w-full p-3 border border-gray-300 rounded" required>
-                <input type="text" name="location" placeholder="Location" class="w-full p-3 border border-gray-300 rounded" required>
-                <textarea name="interests" placeholder="What are you interested in? (e.g., custom suit, wedding attire etc.)" class="w-full p-3 border border-gray-300 rounded h-24" required></textarea>
+                <input type="text" name="name" placeholder="Full Name" autocomplete="name" aria-label="Your full name" class="w-full p-3 border border-gray-300 rounded" required>
+                <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" aria-label="Your phone number" class="w-full p-3 border border-gray-300 rounded" required>
+                <input type="text" name="location" placeholder="Location"  autocomplete="street-address" aria-label="Your street address" class="w-full p-3 border border-gray-300 rounded" required>
+                <textarea name="interests" placeholder="What are you interested in? (e.g., custom suit, wedding attire etc.)" autocomplete="off" aria-label="Your message" class="w-full p-3 border border-gray-300 rounded h-24" required></textarea>
                 
                 <button type="submit" class="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700 transition-colors">
                     <i class="fab fa-whatsapp mr-2"></i>Continue to WhatsApp
@@ -553,9 +553,9 @@
                 
                 <div>
                     <form id="contactForm" class="space-y-4">
-                        <input type="text" name="name" placeholder="Name" autocomplete="name" class="w-full p-3 border border-gray-300 rounded" required>
-                        <input type="tel" name="phone" placeholder="Phone" autocomplete="tel" class="w-full p-3 border border-gray-300 rounded" required>
-                        <textarea name="message" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded h-32" required></textarea>
+                        <input type="text" name="name" placeholder="Name" autocomplete="name" aria-label="Your name" class="w-full p-3 border border-gray-300 rounded" required>
+                        <input type="tel" name="phone" placeholder="Phone" autocomplete="tel" aria-label="Your phone number" class="w-full p-3 border border-gray-300 rounded" required>
+                        <textarea name="message" placeholder="Your Message" autocomplete="off" aria-label="Your message" class="w-full p-3 border border-gray-300 rounded h-32" required></textarea>
                         
                         <button type="submit" class="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700 transition-colors">
                             <i class="fab fa-whatsapp mr-2"></i>Send via WhatsApp
