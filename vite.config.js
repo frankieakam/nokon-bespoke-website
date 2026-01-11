@@ -6,6 +6,11 @@ export default defineConfig({
     open: true // automatically open browser
   },
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    }
   }
 })
